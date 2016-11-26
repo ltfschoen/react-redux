@@ -1,9 +1,9 @@
 ## Setup
 
-`npm install`
-`npm start -s` - suppress noise
-`npm run lint` - ESLint
-`npm run lint:watch` - ESLint Watch
+* `npm install`
+* `npm start -s` - Run Express web server, ESLint Watch, and suppress noise
+
+* Note: Run individual NPM scrips with `npm run ___`
 
 ## Config
 

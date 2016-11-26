@@ -4,7 +4,8 @@
   "description": "React.js app using Redux, ES6, Babel, React Router, Webpack, NPM, ESLint, Mocha, React Test Utils, and Enzyme build based on pluralsight-redux-starter and the React and Redux Pluralsight course by Cory House",
   "scripts": {
     "prestart": "babel-node tools/preload.js",
-    "start": "babel-node tools/srcServer.js",
+    "start": "npm-run-all --parallel open:src lint:watch",
+    "open:src": "babel-node tools/srcServer.js",
     "lint": "node_modules/.bin/esw webpack.config.* src tools",
     "lint:watch": "npm run lint -- --watch"
   },
