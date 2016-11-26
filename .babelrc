@@ -1,0 +1,9 @@
+{
+  "presets": ["react", "es2015"],
+  "env": {
+    // babel-preset-react-hmre to bundle hot reloading code into a package (experimental)
+    "development": {
+      "presets": ["react-hmre"]
+    }
+  }
+}
