@@ -2,7 +2,12 @@
   "name": "react-redux",
   "version": "1.0.0",
   "description": "React.js app using Redux, ES6, Babel, React Router, Webpack, NPM, ESLint, Mocha, React Test Utils, and Enzyme build based on pluralsight-redux-starter and the React and Redux Pluralsight course by Cory House",
-  "scripts": {},
+  "scripts": {
+    "prestart": "babel-node tools/preload.js",
+    "start": "babel-node tools/srcServer.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
+    "lint:watch": "npm run lint -- --watch"
+  },
   "author": "Luke Schoen",
   "license": "MIT",
   "dependencies": {
