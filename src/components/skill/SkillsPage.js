@@ -56,4 +56,4 @@ function mapStateToProps(state, ownProps) {
 }
 
 // Decorate with React Redux Connect function and chain
-export default connect(mapStateToProps, mapDispatchToProps)(SkillsPage);
+export default connect(mapStateToProps)(SkillsPage);
