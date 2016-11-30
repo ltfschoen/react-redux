@@ -1,4 +1,6 @@
 import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import * as skillActions from '../../actions/skillActions';
 
 class SkillsPage extends React.Component {
   constructor(props, context) {
@@ -20,7 +22,9 @@ class SkillsPage extends React.Component {
   }
 
   onClickSave() {
-    alert(`Saving ${this.state.skill.title}`);
+    // TODO - Refactor without using verbose way to dispatch an action
+    this.props.dispatch(skillActions.createSkill(this.state.skill));
+    console.log(`Saving ${this.state.skill.title}`);
   }
 
   render() {
@@ -41,4 +45,15 @@ class SkillsPage extends React.Component {
   }
 }
 
-export default SkillsPage;
+function mapStateToProps(state, ownProps) {
+  return {
+    /**
+     *  Declare Props to expose on Component so access with `this.props.__`.
+     *  Obtain the data for Prop from within Redux Store using the `state` parameter
+     */
+    skills: state.skills
+  };
+}
+
+// Decorate with React Redux Connect function and chain
+export default connect(mapStateToProps, mapDispatchToProps)(SkillsPage);
