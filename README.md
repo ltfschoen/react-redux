@@ -3,7 +3,7 @@
 * `npm install`
 * `npm start -s` - Run Express web server, ESLint Watch, and suppress noise
 
-* Note: Run individual NPM scrips with `npm run ___`
+* Note: Run individual NPM scripts with `npm run ___`
 
 ## Config
 
