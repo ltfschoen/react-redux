@@ -5,7 +5,7 @@ import path from 'path';
 // Export Object Literal with properties to configure Webpack
 export default {
   debug: true,                                    // Display debug info
-  devtool: 'cheap-module-eval-source-map',        // Alternatives options include: inline-source-map
+  devtool: 'inline-source-map',                   // Alternatives options include: cheap-module-eval-source-map
   noInfo: false,                                  // Webpack display list of files being bundled
   // Define Entry Points and inject Middleware
   entry: [

@@ -20,6 +20,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const store = configureStore(); // Instance of Redux Store. Optionally pass initial State to Reducers to override default State defined there
 
+debugger;
+
 render(
   <Provider store={store}>
     <Router history={browserHistory} routes={routes} />

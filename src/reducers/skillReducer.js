@@ -1,7 +1,8 @@
 export default function skillReducer(state = [], action) {
+  debugger;
+  console.log(`reducer:skillReducer - Called Redux Reducer Action [action.type: ${action.type}] and [state: ${state}]`);
   switch(action.type) {
     case 'CREATE_SKILL':
-      console.log("reducer:skillReducer - Called Redux Reducer Action CREATE_SKILL");
       /** Avoid mutating state by using ES6 spread operator
        *  to return new instance of State array, then create deep copy of
        *  the passed in action.skill and return a brand new State containing

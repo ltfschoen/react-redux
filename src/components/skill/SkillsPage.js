@@ -22,17 +22,20 @@ class SkillsPage extends React.Component {
   }
 
   onClickSave() {
+    debugger;
     // TODO - Refactor without using verbose way to dispatch an action
     this.props.dispatch(skillActions.createSkill(this.state.skill));
-    console.log(`Saving ${this.state.skill.title}`);
+    debugger;
+    console.log(`component:SkillsPage:onClickSave [this.state.skill.title: ${this.state.skill.title}]`);
   }
 
   skillRow(skill, index) {
-    return <div key={index}>{skill.title}</div>
+    return <div key={index}>{skill.title}</div>;
   }
 
   render() {
-    console.log("component:SkillsPage - Called render function with exposed Props from Redux");
+    debugger;
+    console.log(`component:SkillsPage:render - Called render with exposed Props from Redux`);
     return (
       <div>
         <h1>Skills</h1>
@@ -57,7 +60,9 @@ SkillsPage.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-  console.log("component:SkillsPage - Received state and data from Redux Store");
+  debugger;
+  console.log(`component:SkillsPage:mapStateToProps - Received state [state: ${JSON.stringify(state)}] from Redux Store`);
+  console.log(`component:SkillsPage:mapStateToProps - Received data(ownProps) from Redux Store`);
   return {
     /**
      *  Declare Props to expose on Component so access with `this.props.__`.
