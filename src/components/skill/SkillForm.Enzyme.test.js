@@ -1,5 +1,5 @@
-import expect from 'expect';
 import React from 'react';
+import expect from 'expect';
 // Enzyme `shallow` is wrapper of React Test Utils `shallowRender`
 import {mount, shallow} from 'enzyme';
 import TestUtils from 'react-addons-test-utils';
