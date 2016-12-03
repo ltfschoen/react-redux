@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import * as skillActions from '../../actions/skillActions';
+import {bindActionCreators} from 'redux';
 
 class SkillsPage extends React.Component {
   constructor(props, context) {
@@ -24,7 +25,7 @@ class SkillsPage extends React.Component {
   onClickSave() {
     debugger;
     // TODO - Refactor without using verbose way to dispatch an action
-    this.props.createSkill(this.state.skill);
+    this.props.actions.createSkill(this.state.skill);
     debugger;
     console.log(`component:SkillsPage:onClickSave [this.state.skill.title: ${this.state.skill.title}]`);
   }
@@ -55,9 +56,8 @@ class SkillsPage extends React.Component {
 }
 
 SkillsPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
   skills: PropTypes.array.isRequired,
-  createSkill: PropTypes.func.isRequired
+  actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
@@ -75,7 +75,7 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    createSkill: (skill) => dispatch(skillActions.createSkill(skill))
+    actions: bindActionCreators(skillActions, dispatch)
   };
 }
 
