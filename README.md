@@ -5,6 +5,10 @@
 
 * Note: Run individual NPM scripts with `npm run ___`
 
+### Debugging
+
+* Use `debugger;` in within code and run in browser to introspect breakpoints
+
 ## Config
 
 * ESLint

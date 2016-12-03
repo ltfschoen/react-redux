@@ -24,7 +24,7 @@ class SkillsPage extends React.Component {
   onClickSave() {
     debugger;
     // TODO - Refactor without using verbose way to dispatch an action
-    this.props.dispatch(skillActions.createSkill(this.state.skill));
+    this.props.createSkill(this.state.skill);
     debugger;
     console.log(`component:SkillsPage:onClickSave [this.state.skill.title: ${this.state.skill.title}]`);
   }
@@ -56,7 +56,8 @@ class SkillsPage extends React.Component {
 
 SkillsPage.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  skills: PropTypes.array.isRequired
+  skills: PropTypes.array.isRequired,
+  createSkill: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
@@ -72,5 +73,11 @@ function mapStateToProps(state, ownProps) {
   };
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    createSkill: (skill) => dispatch(skillActions.createSkill(skill))
+  };
+}
+
 // Decorate with React Redux Connect function and chain
-export default connect(mapStateToProps)(SkillsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SkillsPage);
