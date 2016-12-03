@@ -46,8 +46,15 @@ export class ManageSkillPage extends React.Component {
     let errors = {};
 
     if (this.state.skill.skillName.length < 5) {
-      errors.title = 'Title must be at least 5 characters.';
+      errors.skillName = 'Skill Name must be at least 5 characters.';
       formIsValid = false;
+      toastr.error(errors.skillName);
+    }
+
+    if (this.state.skill.userId.length == 0) {
+      errors.userId = 'User must be selected.';
+      formIsValid = false;
+      toastr.error(errors.userId);
     }
 
     this.setState({errors: errors});
@@ -73,6 +80,7 @@ export class ManageSkillPage extends React.Component {
       });
   }
 
+  // Redirect only after Save Skill Thunk Promise has resolved
   redirect() {
     this.setState({saving: false});
     toastr.success('Skill saved');

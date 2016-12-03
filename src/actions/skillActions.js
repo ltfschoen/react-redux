@@ -1,5 +1,6 @@
 import * as types from './actionTypes';
 import skillApi from '../api/mockSkillApi';
+import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions'; // Action Creator
 
 // Action Creators
 export function loadSkillsSuccess(skills) {
@@ -22,6 +23,7 @@ export function updateSkillSuccess(skill) {
 export function loadSkills() {
   // Thunk Wrapper function accepts dispatcher and are always returned by Thunks
   return function(dispatch) {
+    dispatch(beginAjaxCall()); // Dispatch Action Creator
     /**
      *  Thunk Body makes call to API that returns a Promise
      *  Handle Promise in anonymous function that expects a list of skills
@@ -38,10 +40,12 @@ export function loadSkills() {
 export function saveSkill(skill) {
   console.log(`action creators:saveSkill - Called saveSkill [skill: ${JSON.stringify(skill)}]`);
   return function(dispatch, getState) {
+    dispatch(beginAjaxCall()); // Dispatch Action Creator
     return skillApi.saveSkill(skill).then(savedSkill => {
       console.log(`action creators:saveSkill - Response from API [savedSkill: ${JSON.stringify(savedSkill)}]`);
       savedSkill.id ? dispatch(updateSkillSuccess(savedSkill)) : dispatch(createSkillSuccess(savedSkill));
     }).catch(error => {
+      dispatch(ajaxCallError(error));
       throw(error);
     });
   };

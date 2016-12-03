@@ -27,6 +27,12 @@ class UserApi {
   static saveUser(user) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
+        // Simulate server-side validation
+        const minUserNameLength = 3;
+        if (user.fullName.length < minUserNameLength) {
+          reject(`Name must be at least ${minUserNameLength} characters.`);
+        }
+
         if (user.id) {
           const existingUserIndex = users.findIndex(u => u.id == user.id);
           users.splice(existingUserIndex, 1, user);

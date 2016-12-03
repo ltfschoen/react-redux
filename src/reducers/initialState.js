@@ -1,4 +1,5 @@
 export default {
   skills: [],
-  users: []
+  users: [],
+  ajaxCallsInProgress: 0
 }

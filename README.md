@@ -9,6 +9,10 @@
 
 * Use `debugger;` in within code and run in browser to introspect breakpoints
 
+### Mock API Delay
+
+* Show preloader by enabling simulated delay of real API by increasing delay in src/api/delay.js
+
 ## Config
 
 * ESLint
