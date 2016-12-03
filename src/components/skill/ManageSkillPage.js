@@ -12,6 +12,7 @@ export class ManageSkillPage extends React.Component {
 
     // Initialise State
     this.state = {
+      // Set State using skill passed from Props
       skill: Object.assign({}, props.skill),
       errors: {},
       saving: false
@@ -22,7 +23,10 @@ export class ManageSkillPage extends React.Component {
     this.saveSkill = this.saveSkill.bind(this);
   }
 
+  // Update Container Component State when Props change after initial page load
   componentWillReceiveProps(nextProps) {
+    console.log(`component:ManageSkillsPage:componentWillReceiveProps - [nextProps: ${JSON.stringify(nextProps)}]`);
+    // Check that Props changed (since `componentWillReceiveProps` may run even when Props have not changed)
     if (this.props.skill.id != nextProps.skill.id) {
       // Populate form when existing skill loaded directly
       this.setState({skill: Object.assign({}, nextProps.skill)});
@@ -111,10 +115,12 @@ function mapStateToProps(state, ownProps) {
   console.log(`component:ManageSkillsPage:mapStateToProps - Received state [state: ${JSON.stringify(state)}] from Redux Store`);
   console.log(`component:ManageSkillsPage:mapStateToProps - Received data(ownProps) from Redux Store`);
 
+  // Obtain Component Props populated by React Router
   const skillId = ownProps.params.id; // from path `/skill/:id`
 
   let skill = {id: '', skillName: '', userId: ''};
 
+  // Check URL parameters. Check AJAX call has successfully loaded the skills array to prevent runtime error on page load
   if (skillId && state.skills.length > 0) {
     skill = getSkillById(state.skills, skillId);
   }
