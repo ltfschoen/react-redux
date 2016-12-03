@@ -25,7 +25,7 @@ function setup(saving) {
   };
 }
 
-describe('SkillForm via React Test Utils', () => {
+describe('SkillForm using React Test Utils', () => {
   it('renders form and h1', () => {
     const { output } = setup(); // Output of rendering SkillForm
     expect(output.type).toBe('form');
