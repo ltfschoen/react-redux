@@ -13,6 +13,11 @@
 
 * Show preloader by enabling simulated delay of real API by increasing delay in src/api/delay.js
 
+### Testing
+
+* `npm run test:watch`
+* Change from `progress` to `spec` in package.json Mocha script configuration for more verbose outputs 
+
 ## Config
 
 * ESLint
