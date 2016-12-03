@@ -5,18 +5,24 @@ import delay from './delay';
 const skills = [
   {
     id: 'react',
-    skillName: 'React'
+    skillName: 'react'
   },
   {
     id: 'node',
-    skillName: 'Node'
+    skillName: 'node'
   }
 ];
 
 // Stub that otherwise performed on server in real app.
 const generateId = (skill) => {
-  return skill.skillName.toLowerCase();
+  return skill.skillName.toLowerCase() + getRandomInt(0, 10000);
 };
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 class SkillApi {
   static getAllSkills() {
@@ -28,6 +34,7 @@ class SkillApi {
   }
 
   static saveSkill(skill) {
+    console.log(`api:saveSkill [skill: ${JSON.stringify(skill)}]`);
     skill = Object.assign({}, skill); // Avoid manipulate object passed in.
     return new Promise((resolve, reject) => {
       setTimeout(() => {

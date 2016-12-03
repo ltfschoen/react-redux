@@ -13,12 +13,18 @@ import {Provider} from 'react-redux';
 import { Router, browserHistory } from 'react-router'; // Router Component handles routing. Use HTML5 Push State to handle browserHistory with clean URLs.
 import routes from './routes';
 
+// Actions
+import {loadSkills} from './actions/skillActions';
+
 // Style dependencies from App Endpoint
 require('./favicon.ico'); // Webpack loads favicon.ico
 import './styles/styles.css'; // Webpack imports Sass/CSS files. Webpack runs associated loader and embeds in page.
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
+import '../node_modules/toastr/build/toastr.min.css';
+
 const store = configureStore(); // Instance of Redux Store. Optionally pass initial State to Reducers to override default State defined there
+store.dispatch(loadSkills()); // Dispatch Action on initial page load
 
 debugger;
 
