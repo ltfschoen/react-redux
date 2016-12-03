@@ -15,6 +15,7 @@ import routes from './routes';
 
 // Actions
 import {loadSkills} from './actions/skillActions';
+import {loadUsers} from './actions/userActions';
 
 // Style dependencies from App Endpoint
 require('./favicon.ico'); // Webpack loads favicon.ico
@@ -25,6 +26,7 @@ import '../node_modules/toastr/build/toastr.min.css';
 
 const store = configureStore(); // Instance of Redux Store. Optionally pass initial State to Reducers to override default State defined there
 store.dispatch(loadSkills()); // Dispatch Action on initial page load
+store.dispatch(loadUsers());
 
 debugger;
 

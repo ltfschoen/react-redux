@@ -12,9 +12,10 @@ const SkillListRow = ({skill}) => {
   return (
     <div className="row">
       <div className="col-xs-4">{skill.id}</div>
-      <div className="col-xs-8">
+      <div className="col-xs-4">
         <Link to={'/skill/' + skill.id}>{humanize(skill.skillName)}</Link>
       </div>
+      <div className="col-xs-4">{skill.userId}</div>
     </div>
   );
 };

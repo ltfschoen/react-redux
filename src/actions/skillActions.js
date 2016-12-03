@@ -44,5 +44,5 @@ export function saveSkill(skill) {
     }).catch(error => {
       throw(error);
     });
-  }
+  };
 }

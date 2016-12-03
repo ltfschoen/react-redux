@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import TextInput from '../common/TextInput';
 import SelectInput from '../common/SelectInput';
 
-const SkillForm = ({skill, allSkills, onSave, onChange, saving, errors}) => {
+const SkillForm = ({skill, allUsers, onSave, onChange, saving, errors}) => {
   return (
     <form>
       <h1>Manage Skill</h1>
@@ -12,14 +12,20 @@ const SkillForm = ({skill, allSkills, onSave, onChange, saving, errors}) => {
         value={skill.id}
         onChange={onChange}
         error={errors.id}/>
-      <SelectInput
+      <TextInput
         name="skillName"
         label="Skill Name"
         value={skill.skillName}
-        defaultOption="Select Skill"
-        options={allSkills}
         onChange={onChange}
         error={errors.skillName}/>
+      <SelectInput
+        name="userId"
+        label="User"
+        value={skill.userId}
+        defaultOption="Select User"
+        options={allUsers}
+        onChange={onChange}
+        error={errors.userId}/>
       <input
         type="submit"
         disabled={saving}
@@ -32,7 +38,7 @@ const SkillForm = ({skill, allSkills, onSave, onChange, saving, errors}) => {
 
 SkillForm.propTypes = {
   skill: React.PropTypes.object.isRequired,
-  allSkills: React.PropTypes.array,
+  allUsers: React.PropTypes.array,
   onSave: React.PropTypes.func.isRequired,
   onChange: React.PropTypes.func.isRequired,
   saving: React.PropTypes.bool,

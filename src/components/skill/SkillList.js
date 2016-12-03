@@ -6,7 +6,8 @@ const SkillList = ({skills}) => {
     <div>
       <div className="row">
         <div className="col-xs-4"><strong>ID</strong></div>
-        <div className="col-xs-8"><strong>Skill Name</strong></div>
+        <div className="col-xs-4"><strong>Skill Name</strong></div>
+        <div className="col-xs-4"><strong>User</strong></div>
       </div>
       {skills.map(
         (skill) => <SkillListRow key={skill.id} skill={skill} />

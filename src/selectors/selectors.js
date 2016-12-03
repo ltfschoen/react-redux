@@ -1,8 +1,8 @@
-export function skillsFormattedForDropdown(skills) {
-  return skills.map(skill => {
+export function usersFormattedForDropdown(users) {
+  return users.map(user => {
     return {
-      value: skill.id,
-      text: skill.skillName
+      value: user.id,
+      text: user.fullName
     };
   });
 }

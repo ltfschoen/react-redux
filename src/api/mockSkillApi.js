@@ -5,11 +5,13 @@ import delay from './delay';
 const skills = [
   {
     id: 'react',
-    skillName: 'react'
+    skillName: 'react',
+    userId: 'luke-schoen'
   },
   {
     id: 'node',
-    skillName: 'node'
+    skillName: 'node',
+    userId: 'fake-user'
   }
 ];
 
@@ -62,7 +64,7 @@ class SkillApi {
   static deleteSkill(skillId) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        const indexOfSkillToDelete = authors.findIndex(skill => {
+        const indexOfSkillToDelete = skills.findIndex(skill => {
           skill.skillId == skillId;
         });
         skills.splice(indexOfSkillToDelete, 1);

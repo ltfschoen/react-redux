@@ -1,3 +1,4 @@
 export default {
-  skills: []
+  skills: [],
+  users: []
 }

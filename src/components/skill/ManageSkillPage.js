@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as skillActions from '../../actions/skillActions';
 import SkillForm from './SkillForm';
-import {skillsFormattedForDropdown} from '../../selectors/selectors';
+import {usersFormattedForDropdown} from '../../selectors/selectors';
 import toastr from 'toastr';
 
 export class ManageSkillPage extends React.Component {
@@ -24,6 +24,7 @@ export class ManageSkillPage extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.skill.id != nextProps.skill.id) {
+      // Populate form when existing skill loaded directly
       this.setState({skill: Object.assign({}, nextProps.skill)});
     }
   }
@@ -77,7 +78,7 @@ export class ManageSkillPage extends React.Component {
   render() {
     return (
       <SkillForm
-        allSkills={this.props.skills}
+        allUsers={this.props.users}
         onChange={this.updateSkillState}
         onSave={this.saveSkill}
         skill={this.state.skill}
@@ -90,7 +91,7 @@ export class ManageSkillPage extends React.Component {
 
 ManageSkillPage.propTypes = {
   skill: PropTypes.object.isRequired,
-  skills: PropTypes.array.isRequired,
+  users: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 };
 
@@ -112,7 +113,7 @@ function mapStateToProps(state, ownProps) {
 
   const skillId = ownProps.params.id; // from path `/skill/:id`
 
-  let skill = {id: '', skillName: ''};
+  let skill = {id: '', skillName: '', userId: ''};
 
   if (skillId && state.skills.length > 0) {
     skill = getSkillById(state.skills, skillId);
@@ -124,7 +125,7 @@ function mapStateToProps(state, ownProps) {
      *  Obtain the data for Prop from within Redux Store using the `state` parameter
      */
     skill: skill,
-    skills: skillsFormattedForDropdown(state.skills)
+    users: usersFormattedForDropdown(state.users)
   };
 }
 
