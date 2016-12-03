@@ -4,6 +4,8 @@ export default function skillReducer(state = [], action) {
   debugger;
   console.log(`reducer:skillReducer - Called Redux Reducer Action [action.type: ${action.type}] and [state: ${state}]`);
   switch(action.type) {
+    case types.LOAD_COURSES_SUCCESS:
+      return action.skills; // Replace State with response from call to Mock API
     case types.CREATE_SKILL:
       /** Avoid mutating state by using ES6 spread operator
        *  to return new instance of State array, then create deep copy of
