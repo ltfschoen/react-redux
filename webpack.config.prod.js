@@ -4,7 +4,8 @@ import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 const GLOBALS = {
-  'process.env.NODE_ENV': JSON.stringify('production')
+  'process.env.NODE_ENV': JSON.stringify('production'),
+  'process.env.PORT': 5000
 };
 
 // Export Object Literal with properties to configure Webpack

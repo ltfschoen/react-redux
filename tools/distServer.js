@@ -5,7 +5,7 @@ import compression from 'compression';
 
 /*eslint-disable no-console */
 
-const port = 3000;
+const port = 5000;
 const app = express();
 
 app.use(compression());
@@ -19,6 +19,7 @@ app.listen(port, function(err) {
   if (err) {
     console.log(err);
   } else {
-    open(`http://localhost:${port}`);
+    console.log('Node.js prod app running');
+    // open(`http://localhost:${port}`);
   }
 });

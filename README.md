@@ -22,7 +22,7 @@
 
 ## Production Build
 
-* Run production build locally with `npm run build` and go to http://localhost:3000
+* Run production build locally with `npm run build` and go to http://localhost:5000
 
 ## Config
 
