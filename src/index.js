@@ -6,7 +6,7 @@ import 'babel-polyfill'; // Simplicity in transpiling ES6 gaps. Alternatively im
 import React from 'react';
 import { render } from 'react-dom'; // react-dom separated from Reac in React.14
 
-import configureStore from './store/configureStore'; // Redux Store Config
+import configureStore from './store/configureStore.dev'; // Redux Store Config
 import {Provider} from 'react-redux';
 
 // Dependencies for Router Props
