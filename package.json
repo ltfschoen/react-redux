@@ -15,7 +15,11 @@
     "build:html": "babel-node tools/buildHtml.js",
     "prebuild": "npm-run-all clean-dist test lint build:html",
     "build": "babel-node tools/build.js",
-    "postbuild": "babel-node tools/distServer.js"
+    "postbuild": "babel-node tools/distServer.js",
+    "heroku:clean-dist": "npm run remove-dist && mkdir dist",
+    "heroku:html": "babel-node tools/buildHtml.js",
+    "heroku:build": "babel-node tools/build.js",
+    "heroku:server": "babel-node tools/distServer.js"
   },
   "author": "Luke Schoen",
   "license": "MIT",
@@ -63,7 +67,6 @@
     "react-addons-test-utils": "15.0.2",
     "redux-immutable-state-invariant": "1.2.3",
     "redux-mock-store": "1.0.2",
-    "rimraf": "2.5.2",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.13.0",
