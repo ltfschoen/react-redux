@@ -1,0 +1,17 @@
+language: node_js
+
+node_js:
+  - "node"
+  - "iojs"
+
+install:
+  - npm install -g mocha
+  - npm install
+
+script:
+  - npm run test
+
+# safelist
+branches:
+  only:
+  - master

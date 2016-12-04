@@ -15,6 +15,8 @@
 
 ### Testing
 
+* Travic CI Build Status: [![Build Status](https://api.travis-ci.org/ltfschoen/react-redux.svg)](https://travis-ci.org/ltfschoen/react-redux)
+
 * `npm run test:watch`
 * Change from `progress` to `spec` in package.json Mocha script configuration for more verbose outputs 
 
