@@ -1,4 +1,4 @@
-## Setup
+## Local Setup
 
 * `npm install`
 * `npm start -s` - Run Express web server, ESLint Watch, and suppress noise
@@ -17,6 +17,10 @@
 
 * `npm run test:watch`
 * Change from `progress` to `spec` in package.json Mocha script configuration for more verbose outputs 
+
+## Production Build
+
+* Run production build locally with `npm run build` and go to http://localhost:3000
 
 ## Config
 
