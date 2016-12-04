@@ -24,6 +24,8 @@
 
 * Run production build locally with `npm run build` and go to http://localhost:5000
 
+* Heroku not working https://react-redux-all.herokuapp.com/
+
 ## Config
 
 * ESLint
@@ -43,6 +45,7 @@
 * [ ] Pagination and infinite scrolling to support large data sets
 * [ ] Sort Skill table alphabetically by default by adding logic to `mapStateToProps`
 * [ ] Store old Skill form data so can revert to changes when user navigates to different page  
+* [ ] Fix Heroku
 
 ## Credits
 
