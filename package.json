@@ -50,7 +50,8 @@
     "redux": "3.5.2",
     "redux-thunk": "2.0.1",
     "rimraf": "2.5.2",
-    "toastr": "^2.1.2"
+    "toastr": "^2.1.2",
+    "webpack": "1.13.0"
   },
   "devDependencies": {
     "css-loader": "0.23.1",
@@ -71,7 +72,6 @@
     "redux-mock-store": "1.0.2",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
-    "webpack": "1.13.0",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.10.0"
   },
