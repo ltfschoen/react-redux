@@ -1,8 +1,7 @@
 language: node_js
 
 node_js:
-  - "node"
-  - "iojs"
+  - "6.6.0"
 
 install:
   - npm install -g mocha
