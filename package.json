@@ -24,7 +24,7 @@
   "author": "Luke Schoen",
   "license": "MIT",
   "dependencies": {
-    "babel": "^6.5.2",
+    "babel-cli": "6.8.0",
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
     "jquery": "2.2.3",
@@ -39,7 +39,6 @@
     "toastr": "^2.1.2"
   },
   "devDependencies": {
-    "babel-cli": "6.8.0",
     "babel-core": "6.8.0",
     "babel-loader": "6.2.4",
     "babel-plugin-react-display-name": "2.0.0",
